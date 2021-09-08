@@ -56,8 +56,8 @@ if (isUnix()) {
             // setDefUsername
             // -------------------------------------------------------------------------
 		
-            stage('Authorize DevHub') {
-                rc = bat returnStatus: true, script: "\"${toolbelt}\"sfdx config:set defaultdevhubusername=${SF_USERNAME} --setalias HubOrg --global"
+            stage('setDefUsername') {
+                rc = bat returnStatus: true, script: "\"${toolbelt}\"sfdx force:config:set defaultdevhubusername=${SF_USERNAME} --setalias HubOrg --global"
                 if (rc != 0) {
                     error 'Salesforce:setDefUsername failed.'
                 }
