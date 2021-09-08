@@ -56,12 +56,8 @@ if (isUnix()) {
             // setDefUsername
             // -------------------------------------------------------------------------
 		
-            stage('setDefUsername') {
-                rc = bat returnStatus: true, script: "\"${toolbelt}\"sfdx force:config:set defaultdevhubusername=${SF_USERNAME}"
-                if (rc != 0) {
-                    error 'Salesforce:setDefUsername failed.'
-                }
-		rc = bat returnStatus: true, script: "\"${toolbelt}\"sfdx alias:set HubOrg=${SF_USERNAME}"
+            stage('set Alias') {
+		rc = bat returnStatus: true, script: "\"${toolbelt}\"sfdx force:alias:set HubOrg=${SF_USERNAME}"
                 if (rc != 0) {
                     error 'Salesforce:alias:se failed.'
                 }
