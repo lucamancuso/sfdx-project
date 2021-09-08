@@ -61,7 +61,7 @@ if (isUnix()) {
                 if (rc != 0) {
                     error 'Salesforce:setDefUsername failed.'
                 }
-		
+	    }
 
             // -------------------------------------------------------------------------
             // Create new scratch org to test your code.
